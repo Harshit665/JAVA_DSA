@@ -11,8 +11,4 @@ public class ReverseArray {
         }
         return arr;
     }
-
-    public static void main(String[] args) {
-
-    }
 }
