@@ -9,18 +9,18 @@ public class MaximumSubarray {
     static ArrayList<Integer> maximumElementOfSubArray(int [] arr, int k){
         int i=0;
         int j=0;
-        ArrayList<Integer> maximum = new ArrayList<>();
+        //ArrayList<Integer> maximum = new ArrayList<>();
         ArrayList<Integer> ans = new ArrayList<>();
+        int max= 0;
 
         while (j < arr.length){
 
-            if (maximum.isEmpty()){
-                maximum.add(arr[j]);
-             }
+//            if (maximum.isEmpty()){
+//                maximum.add(arr[j]);
+//             }
 
-            if (arr[j] > maximum.get(0)){
-                maximum.remove(0);
-                maximum.add(arr[j]);
+            if (arr[j] > max){
+                max = arr[j];
             }
 
             if (j-i+1 < k){
@@ -28,7 +28,7 @@ public class MaximumSubarray {
             }
 
             if (j-i+1 == k){
-                ans.add(maximum.get(0));
+                ans.add(max);
                 i++;
                 j++;
             }
