@@ -7,6 +7,7 @@ public class Print2dArray {
             for (int j=0;j<arr[i].length;j++){
                 System.out.println(arr[i][j]);
             }
+            System.out.println();
         }
     }
 }
