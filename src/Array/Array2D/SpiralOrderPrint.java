@@ -13,28 +13,28 @@ public class SpiralOrderPrint {
 
         while (totalEl < r*c){
             // top row => left column to right column
-            for (int j=leftColumn;j<=rightColumn;j++){
+            for (int j=leftColumn;j<=rightColumn && totalEl < r*c;j++){
                 System.out.println(matrix[topRow][j] + "");
                 totalEl++;
             }
             topRow++;
 
             // right column => top row to bottom row
-            for (int i=topRow;i<=bottomRow;i++){
+            for (int i=topRow;i<=bottomRow && totalEl < r*c;i++){
                 System.out.println(matrix[i][rightColumn] + "");
                 totalEl++;
             }
             rightColumn--;
 
             // bottom row => right column to left column
-            for (int j=rightColumn;j>=leftColumn;j--){
+            for (int j=rightColumn;j>=leftColumn && totalEl < r*c;j--){
                 System.out.println(matrix[bottomRow][j] + "");
                 totalEl++;
             }
             bottomRow--;
 
             // left column => bottom row to top row
-            for (int i=bottomRow;i>=topRow;i--){
+            for (int i=bottomRow;i>=topRow && totalEl < r*c;i--){
                 System.out.println(matrix[i][leftColumn] + "");
                 totalEl++;
             }
