@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class RectangleSum {
 
-    static int findSum(int[][] matrix,int l1,int r1,int l2,int r2){
-        int sum = 0;
-    }
+//    static int findSum(int[][] matrix,int l1,int r1,int l2,int r2){
+//        int sum = 0;
+//    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
