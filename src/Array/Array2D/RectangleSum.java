@@ -15,6 +15,32 @@ public class RectangleSum {
         return sum;
     }
 
+    static void findPrefixSumMatrix(int[][] matrix){
+        int r = matrix.length;
+        int c = matrix[0].length;
+        // traverse horizontally to calculate row wise prefix sum
+        for (int i= 0;i<r;i++){
+            for (int j=i;j<c;j++){
+                matrix[i][j] += matrix[i][j-1];
+            }
+        }
+    }
+
+    static int findSum2(int[][] matrix,int l1,int r1,int l2,int r2){
+        int sum = 0;
+        findPrefixSumMatrix(matrix);
+        for (int i=l1;i<=l2;i++){
+            // r1 to r2 ka sum for row i
+            if (r1 > 0){
+                sum += matrix[i][r2] - matrix[i][r1-1];
+            }
+            else {
+                sum += matrix[i][r2];
+            }
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter Number of rows and column");
@@ -34,6 +60,6 @@ public class RectangleSum {
         int l2 = sc.nextInt();
         int r2 = sc.nextInt();
 
-        System.out.println("rectangle Sum " + findSum(matrix,l1,r1,l2,r2));
+        System.out.println("rectangle Sum " + findSum2(matrix,l1,r1,l2,r2));
     }
 }
